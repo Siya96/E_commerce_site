@@ -1,4 +1,4 @@
 def fun1():
     print("hello this fucking woooorld")
-    print("mjau")
+    print("mjau mjau motherfucker")
     return 1
