@@ -165,27 +165,13 @@ body{
 	margin-left: 490px;
 }
 
-
-.AB i{
-	font-weight: bold;
-	font-size: 24px;
-	font-family: "Lucida Calligraphy";
-	color: white;
-}
-
-.AB p{
-	font-size: 18px;
-	font-family: "Verdana";
-	color: white;
-}
-
-#förstB{
+#first_pic{
 	display:none;
 }
 
 .jumbotron {
     /* The image used */
-    background-image: url("Bröd1.jpeg");
+    background-image: url("blue_car_01.jpg");
 
     /* Set a specific height */
     min-height: 558px; 
@@ -197,62 +183,7 @@ body{
     background-size: cover;
 }
 
-.hLine1{
-	width: 730px;
-	height: 1px;
-	background: white;
-	margin-left: 280px;
-	margin-top: 70px;
-}
 
-.hLine2{
-	width: 730px;
-	height: 1px;
-	background: white;
-	margin-left: 280px;
-	margin-top: -10px;
-}
-
-.vLine1 {
-	position: absolute;
-    border-right: 1px solid #f2f1ef;
-    height: 210px;
-	width: 0px;
-	margin-left: 290px;
-	margin-top: -15px;
-}
-
-.vLine2 {
-	position: absolute;
-    border-right: 1px solid #f2f1ef;
-    height: 200px;
-	width: 0px;
-	margin-left: 1000px;
-	margin-top: -200px;
-}
-
-.AB{
-	margin: 30px 0 30px 310px;
-	width: 700px;
-	height: 170px;
-	padding: 20px;
-	text-align:center;
-}
-
-.AB a{
-	color: #edaf10;
-}
-
-.AB a:hover{
-	color: #edaf10;
-}
-
-.bleh {
-	  margin-top: 30px;
-      padding: 35px 120px 30px;
-	  border: none;
-  }
-  
   #keh{
 	  height: 240px;
   }
@@ -277,27 +208,13 @@ body{
   
   .thumbnail img{
 	  width: 100%;
-	  height:100px;
+	  height: 200px !important;
   }
   
 #sortim{
 	  display: none;
 }
   
-.sortiment {
-    /* The image used */
-    background-image: url("KaffeCroi.jpeg");
-
-    /* Set a specific height */
-    min-height: 200px; 
-	margin-top: 50px;
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
 #linkcol{
 	font-size: 15px;
@@ -852,6 +769,40 @@ table p{
     color: white;
 }
 
+/*LOGIN*/
+.leftIn{
+	margin-top: 70px;
+	margin-left: 50px;
+	width: 300px;
+}
+
+.leftIn b{
+	color: white;
+	font-size: 25px;
+}
+
+.leftIn input{
+	outline: none;
+	color: black;
+	padding: 5px;
+	width:  300px;
+	margin-top: 20px;
+}
+
+.leftIn input:focus, textarea:focus {
+    outline: none !important;
+    border: 2px solid #edaf10;
+    box-shadow: 0 0 10px #edaf10;
+}
+
+.leftIn a{
+	color: white;
+}
+
+.leftIn a:hover{
+	color: white;
+}
+
 /*INNAN KASSA*/
 
 #logIn, #bliMedlem{
@@ -1340,132 +1291,11 @@ input{
 
 /*FOOTER*/
 
-footer{
-	border-top: 2px solid white!important;
-	/*background-color: rgb(255, 255, 255, 0.3) !important;*/
-	min-height: 200px;
-	margin-top: 50px;
-}
-
-#fav{
-	margin-top: 50px;
-	margin-left: 80px;
-}
-
-.logoInfo{
-	padding: 20px;
-	margin-top: -280px;
-	margin-left: 320px;
-	width: 300px;
-	height: 200px;
-	text-align:center;
-}
-
-.logoInfo p, .öppet p{
-	font-size: 18px;
-	color: white;
-}
-
-.map:before{
-	 font-weight:900;
-	 font-family: 'Font Awesome 5 Free';
-     content: "\f3c5";
-	 font-size: 20px;
-	 padding-right: 10px;
-	 color: #edaf10;
-}
-
-.telefon:before{
-	 font-weight:900;
-	 font-family: 'Font Awesome 5 Free';
-     content: "\f095";
-	 padding-right: 20px;
-	 color: #edaf10;
-}
-
-.brev:before{
-	 font-weight:900;
-	 font-family: 'Font Awesome 5 Free';
-     content: "\f0e0";
-	 font-size: 20px;
-	 padding-right: 10px;
-	 color: #edaf10;
-}
-
-#media{
-	position: relative;
-	margin-top: -30px;
-	margin-left: 480px;
-	width: 190px;
-	left: 500px;
-    bottom: 150px;
-	text-align:center;
-}
-
-#media p{
-	font-size: 18px;
-	color: white;
-}
-
-.fab{
-	cursor:pointer;
-	color: #edaf10;
-	padding-right: 20px;
-	font-size: 40px; 
-}
-
-.fab:hover{
-    color:white;
-}
-
-.öppet{
-	padding: 20px;
-	margin-top: -200px;
-	margin-left: 680px;
-	width: 210px;
-	text-align:center;
-}
-
-.öppet h3, .logoInfo h3, #media h3{
-	font-size: 18px !important;
-	font-weight:bold !important;
-	color: white !important;
-}
-
-.färdig{
-	position: absolute;
-	border: 2px solid #edaf10;
-	background-color: white;
-	color: black;
-	padding: 20px;
-	margin-top: 100px;
-	margin-left: 570px;
-	width: 200px;
-	font-size: 18px;
-}
-
-.färdig p{
-	margin-left: 20px;
-}
-
-#färd{
-	border: 2px solid #edaf10;
-    background-color: white;
-    color: #edaf10;
-    padding: 8px 8px;
-    font-size: 16px;
-	margin-top: 10px;
-    margin-left: 50px;
-    font-weight: bold;
-}
-
-.färdig2{
-	margin-left: 480px;
-	width: 400px;
-}
-
-.färdig2 #färd{
-	margin-left: 150px;
+.logo_gif{
+    display: block;
+    margin-top: 5%;
+    margin-left: 41%;
+    width: 20%;
 }
 
 
@@ -1539,7 +1369,7 @@ footer{
     display: none;
 }
 
-#förstB{
+#first_pic{
 	width: 100%;
 	display: block;
 	margin-top: 60px;
@@ -1561,66 +1391,13 @@ footer{
 	margin-left: 490px;
 }
 
-.AB{
-	position:relative;
-	margin: 0px 0 40% 12%;
-	width: 75%;
-	height: 170px;
-	padding: 20px;
-
-}
-
-
-.AB i{
-	font-weight: bold;
-	font-size: 24px;
-	font-family: "Lucida Calligraphy";
-	color: white;
-}
-
-.AB p{
-	font-size: 18px;
-	font-family: "Verdana";
-	color: white;
-}
-
-.hLine1{
-	width: 85%;
-	height: 1px;
-	background: white;
-	margin-left: 9%;
-	margin-top: 15%;
-}
-
-.hLine2{
-	width: 90%;
-	height: 1px;
-	background: white;
-	margin-left: 5%;
-	margin-top: -4%;
-}
-
-.vLine1 {
-    height: 310px;
-	width: 0px;
-	margin-left: 50px;
-	margin-top: -15px;
-}
-
-.vLine2 {
-    height: 300px;
-	width: 0px;
-	margin-left: 360px;
-	margin-top: -300px;
-}
-
 .bleh {
       padding: 35px 120px 0px;
   }
   
   .thumbnail img{
 	  width: 100%;
-	  height:100px;
+	  height:200px;
   }
   
 #sortim{
