@@ -217,44 +217,28 @@ body{
 
 /*END MENY*/
 
-/* LOGIN*/
+/* BEGIN reg_customer */
 
-  .leftIn{
-	margin-top: 70px;
-	margin-left: 50px;
-	width: 300px;
+.center {
+    border: 1px  solid white;
+    width: 50%;
+    margin-left: 25%;
+    background-color: #e4c67c;
+
 }
 
-.leftIn b{
-	color: white;
-	font-size: 25px;
+.center input {
+    width: 50%;
+    margin-top: 5%;
+    padding: 1%;
 }
 
-.leftIn input{
-	outline: none;
-	color: black;
-	padding: 5px;
-	width:  300px;
-	margin-top: 20px;
-}
-
-.leftIn input:focus, textarea:focus {
-    outline: none !important;
-    border: 2px solid #edaf10;
-    box-shadow: 0 0 10px #edaf10;
-}
-
-.leftIn a{
-	color: white;
-}
-
-.leftIn a:hover{
-	color: white;
+.center b {
+    font-size: 150%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #vidare {
-	float: left;
-	margin-right: 10%;
 	margin-top: 5%;
 	padding: 2%;
 	color: black;
@@ -268,8 +252,8 @@ body{
 }
 
 
-
-  /*END LOGIN*/
+  
+  /*END reg_customer */
   
   /*FOOTER*/
 
@@ -381,5 +365,8 @@ body{
 
 /*END MENY*/
 
-/*LOGIN*/
+/* reg_customer */
+
+
+
 }
