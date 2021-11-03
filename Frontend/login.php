@@ -3,12 +3,13 @@
 <head>
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="structure.css">
+  <link rel="stylesheet" type="text/css" href="login.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="icon" href="logga.gif" type="image/gif" sizes="15x15">
 </head>
 
 <div class="bannerContainer">
@@ -61,10 +62,16 @@
 <input type="text" name="usrnamne" placeholder="E-post">
 <input type="password" name="pwd" placeholder="Lösenord">
 <a href="glömt.php">Forgot your password?</a><br>
-<a href="reg.php"><button id="vidare">Create account</button></a>
 <button type="submit" id="vidare">Sign in</button>
 </form>
+<a href="reg.php"><button id="vidare">Create account</button></a>
 </div>
+
+
+
+<footer>
+    <img src="logga.gif" alt:"Logo: Sportscar" class="logo_gif">
+</footer>
 
 
 </body>
