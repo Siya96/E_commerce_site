@@ -1,0 +1,376 @@
+::-moz-selection { /* Code for Firefox */
+    color: white;
+    background: #edaf10;
+}
+
+::selection {
+    color: white;
+    background: #edaf10;
+}
+
+hr{
+	border-color: white !important;
+}
+
+body{
+	background-color: black !important;
+}
+
+/*MENY*/
+
+.navbar-inverse{
+	 padding-left: 50px !important;
+	 padding-right: 70px !important;
+	 background-color: black !important;
+	 border-bottom:0.5px solid white !important;
+}
+
+.navbar-inverse .navbar-toggle{
+	border: none !important;
+	border-radius: 0px !important;
+	border-color: transparent !important;
+	float: left;
+	margin-left: 2% !important;
+	margin-top: 1%;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar{
+	background-color: #edaf10 !important;
+	height: 7px;
+	width: 30px;
+}
+
+.navbar-nav {
+	font-family: "Verdana";
+	font-size:16px;
+	margin-top: 61px !important;
+	margin-left: -230px !important;
+}
+.cart:before, .cart2:before{
+	 font-weight:900;
+	 font-family: 'Font Awesome 5 Free';
+     content: "\f290";
+	 font-size: 20px;
+	 padding-right: 5px;
+	 color: white;	 
+}
+
+.cart{
+	display:none;
+}
+
+.cartDown{
+	right: 0;
+	width: 330px;
+	max-height: 400px;
+}
+
+.tom{
+	border-bottom: 1px solid white;
+	height: 60px;
+}
+
+.tom p{
+	color: white;
+	font-weight: bold;
+	font-size: 13px;
+	padding: 20px;
+}
+
+
+.dropbtn {
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+	margin-top: 0px;
+	min-width: 100px;
+	overflow: auto;
+    background-color: #edaf10;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+	border-top: 1px solid white;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #edaf10;
+	color:white !important;
+}
+
+#logo{
+	 height: 61px ;
+	 color: #edaf10 ;
+	 font-size: 25px ;
+	 font-family: "Verdana";
+	 font-weight:bold;
+}
+
+#logo:hover{
+	color: white ; 
+    background-color: #edaf10;
+    background-size: 80px;	
+	
+}
+
+#active{
+	color: #edaf10;
+	border-bottom: 2px solid #edaf10;
+	height: 52px;
+    z-index: 1;	
+}
+
+#menu, .menu {
+    color: white;
+}
+
+#menu:hover, .menu:hover {
+    background-color: #edaf10;	
+	background-size: 60px;
+}
+
+.link a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.link a:hover {
+	background-color: white;
+	color:#edaf10;
+	text-decoration: underline;
+}
+
+.result{
+	margin-top: 0px;
+	padding: 20px;
+}
+
+.result p{
+	color: white;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+.resultat hr{
+	color: white;
+}
+
+#linkcol{
+	font-size: 15px;
+	color:#edaf10;
+	text-decoration: underline;
+	-webkit-transition: padding-left 2s; /* For Safari 3.1 to 6.0 */
+    transition: padding-left 2s;
+}
+
+#linkcol:after {
+    position: absolute; /* Prevent underline of arrow */
+    padding-left:3px; /* Add a little space between text and arrow */
+    content: '>'; 
+}
+
+#linkcol:hover{
+	color:black;
+}
+
+#linkcol:hover:after{
+	color:black;
+	padding-left: 8px;
+}
+
+#p3{
+	padding-left: 150px;
+	font-weight: fine;
+}
+
+#shoppingBag{
+    border: 2px solid white;
+    background-color: #edaf10;
+    color: white;
+    height: 35px;
+	width: 110px;
+    font-size: 13px;
+    font-weight: bold;
+	margin-left: 100px;
+	margin-top: 15px;
+}
+
+#shoppingBag:hover{  
+    background-color: white;  
+    color: 	#edaf10;
+}
+
+/*END MENY*/
+
+/* LOGIN*/
+
+  .leftIn{
+	margin-top: 70px;
+	margin-left: 50px;
+	width: 300px;
+}
+
+.leftIn b{
+	color: white;
+	font-size: 25px;
+}
+
+.leftIn input{
+	outline: none;
+	color: black;
+	padding: 5px;
+	width:  300px;
+	margin-top: 20px;
+}
+
+.leftIn input:focus, textarea:focus {
+    outline: none !important;
+    border: 2px solid #edaf10;
+    box-shadow: 0 0 10px #edaf10;
+}
+
+.leftIn a{
+	color: white;
+}
+
+.leftIn a:hover{
+	color: white;
+}
+
+#vidare {
+	float: left;
+	margin-right: 5%;
+	margin-top: 5%;
+	padding: 2%;
+	
+}
+
+  /*END LOGIN*/
+  
+  /*FOOTER*/
+
+.logo_gif{
+    display: block;
+    margin-top: 5%;
+    margin-left: 41%;
+    width: 20%;
+}
+
+/*END FOOTER*/
+
+/* ####### responsive layout CSS ####### */
+
+@media (max-width: 576px){ 
+
+/*MENY*/
+.bannerContainer {
+    position:relative; 
+	margin-top: 15%;
+}
+
+.navbar {
+    position:absolute !important;
+    top: -60px;
+    z-index:10;
+    width: 100%;
+	padding: 0px !important;
+}
+
+.navbar-inverse{
+	 padding-left: 0px !important;
+	 padding-right: 0px !important;
+	 padding-bottom: 0px !important;
+}
+
+.navbar-nav {
+	margin-top: 0px !important;
+	margin-left: 0px !important;
+	padding: 0px !important;
+}
+
+#logo{
+	height: 30% !important;
+	margin-left: 8%;
+	padding-top: 4.5%;
+	font-size: 18px;
+}
+
+.result{
+	margin-top: 0px;
+	padding: 20px;
+}
+
+.result p{
+	color: white;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+.resultat hr{
+	color: white;
+}
+
+.border-center { 
+    display:none;
+}
+
+.cart{
+	 display: block;
+	 margin-left: 129%;
+	 width: 56px;
+}
+
+.cart2{
+	 display: none !important;
+}
+
+.cartDown{
+	left: -360%;
+	width: 330px;
+	max-height: 400px;
+}
+
+#active{
+	height: 42px;
+}
+
+#linkcol{
+	font-size: 15px;
+	color:#edaf10;
+	text-decoration: underline;
+	-webkit-transition: padding-left 2s; /* For Safari 3.1 to 6.0 */
+    transition: padding-left 2s;
+}
+
+.cartDown{
+	right: 0;
+	width: 330px;
+	max-height: 400px;
+}
+
+
+
+#p3{
+	padding-left: 62%;
+}
+
+
+/*END MENY*/
+
+/*LOGIN*/
+}
