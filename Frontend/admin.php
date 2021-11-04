@@ -1,5 +1,6 @@
 <?php
 
+
     $connection = mysqli_connect("localhost", "grupp2", "sportscar");
 
     if(!$connection) {
@@ -21,7 +22,7 @@
         ?><div class="itemTable"> <?php
            while($row = $val->fetch_assoc()) {
             
-                echo "<br> Type: ".$row["car_type"]. "- Inventory :".$row["car_inv"]. "<br>";
+                echo "<br> Type: ".$row["car_type"]. "- Inventory :".$row["car_inv"]. "<br";
             
 
            }
@@ -29,6 +30,7 @@
 
 
        }
+
        mysqli_close($connection);
 
 
@@ -84,8 +86,6 @@
       <li><a href="login.php" id="menu">Login</a></li>
       <li><a href="admin.php" id="active">Admin</a></li>
     </ul>
-	
-
    
   </div></div>
 </nav></div>
@@ -95,6 +95,18 @@
 <div class="jumbotron">
 
 </div><img src="blue_car_01.jpg" alt="A blue sportscar" id="first_pic">
+
+<div class="changeCar">
+    <form class="carChange" method="POST">
+        <input type="text" name="carType" required>
+        <input type="number" name="carAmount" required>
+        <button type="submit" name="buttonAdd">Add></button>
+        <button type ="submit "name="buttonRemove">Remove</button>
+    </form>
+</div>
+
+
+
 
 
 
