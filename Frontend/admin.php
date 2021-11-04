@@ -6,7 +6,7 @@
         die('Could not connect'.mysqli_connect_error());
     }
     else {
-        mysqli_select_db($connection, "sportscar");
+       mysqli_select_db($connection, "sportscar");
        $sqlQuery = 'SELECT car_type, car_inv FROM items';
 
        
@@ -29,6 +29,7 @@
 
 
        }
+       mysqli_close();
 
 
 
