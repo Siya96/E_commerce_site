@@ -29,7 +29,7 @@
 
 
        }
-       mysqli_close();
+       mysqli_close($connection);
 
 
 
