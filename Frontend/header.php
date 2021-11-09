@@ -57,7 +57,7 @@
 
         if (isset($_SESSION["userID"])) {
 
-          echo "<li><a href='logout.inc.php' id='menu'>Log out</a></li>";
+          echo "<li><a href='includes/logout.inc.php' id='menu'>Log out</a></li>";
           echo "<li><a href='my_profile.php' id='menu'>My profile</a></li>";
 
         }

@@ -1,8 +1,8 @@
 <?php
     
     include_once 'header.php';
-
-    require_once 'admin.inc.php';
+    
+    require_once 'includes/admin.inc.php';
 
 ?>
 
@@ -11,7 +11,7 @@
 
 <div class="jumbotron">
 
-</div><img src="blue_car_01.jpg" alt="A blue sportscar" id="first_pic">
+</div><img src="img/blue_car_01.jpg" alt="A blue sportscar" id="first_pic">
 
 <div class="changeCar">
     <form class="carChange" method="POST">

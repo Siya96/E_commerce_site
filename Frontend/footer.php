@@ -1,6 +1,6 @@
 <footer>
 
-    <img src="logga.gif" alt:"Logo:Sportscar" class="logo_gif">
+    <img src="img/logga.gif" alt:"Logo:Sportscar" class="logo_gif">
 
 </footer>
 

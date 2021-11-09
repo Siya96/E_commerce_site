@@ -88,7 +88,7 @@ function userNameExists($connection, $userName, $email) {
 
     if (!mysqli_stmt_prepare($sql_stmt, $sql)) {
 
-        header("location: reg_customer.php?error=sql_stmt_failed"); #we can grab this error in the signup page to throw an error message
+        header("location: ../reg_customer.php?error=sql_stmt_failed"); #we can grab this error in the signup page to throw an error message
         exit();
 
     }
@@ -129,7 +129,7 @@ function createNewUser($connection, $userName, $email, $pwd) {
                                                
     if (!mysqli_stmt_prepare($sql_stmt, $sql)) {
 
-        header("location: reg_customer.php?error=sql_stmt_failed"); 
+        header("location: ../reg_customer.php?error=sql_stmt_failed"); 
         exit();
 
     }
@@ -141,7 +141,7 @@ function createNewUser($connection, $userName, $email, $pwd) {
 
     mysqli_stmt_close($sql_stmt);
 
-    header("location: reg_customer.php?error=UserSuccesfullyCreated");
+    header("location: ../reg_customer.php?error=UserSuccesfullyCreated");
 
     exit();
 
@@ -172,7 +172,7 @@ function loginUser($connection, $userName, $pwd) {
 
     if($existing_UID === false) {
 
-        header("location: login.php?error=invalidLogin"); #we can grab this error in the signup page to throw an error message
+        header("location: ../login.php?error=invalidLogin"); #we can grab this error in the signup page to throw an error message
         exit();
 
     }
@@ -183,7 +183,7 @@ function loginUser($connection, $userName, $pwd) {
 
     if ($pwd_check === false) {
 
-        header("location: login.php?error=invalidLogin"); 
+        header("location: ../login.php?error=invalidLogin"); 
         exit();
 
     }
@@ -194,7 +194,7 @@ function loginUser($connection, $userName, $pwd) {
         $_SESSION["userID"] = $existing_UID["usersID"];
         $_SESSION["userUID"] = $existing_UID["usersUID"];
 
-        header("location: index.php"); 
+        header("location: ../index.php"); 
         exit();
 
     }
