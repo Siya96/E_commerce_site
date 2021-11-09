@@ -16,7 +16,7 @@ body{
 	background-color: black !important;
 }
 
-/*MENY*/
+/* Begin meny */
 
 .navbar-inverse{
 	 padding-left: 50px !important;
@@ -215,9 +215,9 @@ body{
     color: 	#edaf10;
 }
 
-/*END MENY*/
+/* End meny */
 
-/* INDEX*/
+/* Begin index */
 
 .jumbotron{
 	margin-top: -20px;
@@ -260,7 +260,109 @@ body{
 	  margin-left: 29%;
   }
   
-  /*END INDEX*/
+  /* End index */
+
+
+
+
+/* Begin login*/
+
+.leftIn_login{
+	margin-top: 5%;
+	margin-left: 25%;
+	width: 300px;
+	
+}
+
+.leftIn_login h2{
+	margin-left: 40%;
+	color: white;
+	font-size: 20px;
+}
+
+.leftIn_login input{
+	outline: none;
+	color: black;
+	padding: 5px;
+	width:  300px;
+	margin-top: 20px;
+}
+
+.leftIn_login input:focus, textarea:focus {
+    outline: none !important;
+    border: 2px solid #edaf10;
+    box-shadow: 0 0 10px #edaf10;
+}
+
+.leftIn_login a{
+	color: white;
+}
+
+.leftIn_login a:hover{
+	color: white;
+}
+
+#vidare_login {
+	
+	margin-left: 40%;
+	margin-top: 5%;
+	padding: 2%;
+	color: black;
+	background-color: rgb(153, 153, 153);
+	
+}
+
+#vidare_login:hover {
+	background-color: #edaf10;
+
+}
+
+  /*END LOGIN*/
+
+
+
+
+
+/* BEGIN reg_customer */
+
+.center_reg_customer {
+    border: 1px  solid white;
+    width: 50%;
+    margin-left: 25%;
+    background-color: #e3e63e;
+
+}
+
+.center_reg_customer input {
+    width: 50%;
+    margin-top: 5%;
+	margin-left: 25%;
+    padding: 1%;
+}
+
+.center_reg_customer h2 {
+    font-size: 190%;
+	margin-left: 37%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#vidare_reg_customer {
+	margin-top: 5%;
+	margin-left: 40%;
+	padding: 2%;
+	color: black;
+	background-color: rgb(153, 153, 153);
+	
+}
+
+#vidare_reg_customer:hover{
+	background-color: #edaf10;
+
+}
+  
+  /*END reg_customer */
+
+
   
   /*FOOTER*/
 
@@ -273,7 +375,10 @@ body{
 
 /*END FOOTER*/
 
-/* ####### responsive layout CSS ####### */
+
+
+
+/* ####### responsive layout CSS ---> For mobile layout ####### */ 
 
 @media (max-width: 576px){ 
 
