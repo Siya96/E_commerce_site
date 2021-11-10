@@ -77,11 +77,10 @@ function pwd_not_mathcing($pwd, $pwd_repeat) {
 }
 
 function userNameExists($connection, $userName, $email) {
-
+    
     $result;
 
     $sql = "SELECT * FROM users WHERE usersUID = ? OR usersE = ?;"; #The questionmark is a placeholder
-
     $sql_stmt = mysqli_stmt_init($connection); #Here we prepare a "prepared statement" to prevent any sql-injection. The user could e.g. write malicous code in one of the output boxes and compromise our database, that's why we use prepared statement.
                                                #The $sql line (sql-statement) is tied to the prepared statement ($sql_stmt) withput any input from the user
                                                #and then later on we add input from the user to run them separately which prevents sql-injection.
@@ -169,6 +168,7 @@ function emptyInputLogin($userName, $pwd) {
 function loginUser($connection, $userName, $pwd) {
 
     $existing_UID = userNameExists($connection, $userName, $userName);
+
 
     if($existing_UID === false) {
 

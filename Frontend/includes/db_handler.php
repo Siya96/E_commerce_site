@@ -3,8 +3,9 @@
 
 $serverName = "localhost";
 $dbUsername = "root";
-$dbPassword = "sportscar";
+$dbPassword = "";
 $dbName = "sportscar";
+
 
 $connection = mysqli_connect($serverName, $dbUsername, $dbPassword, $dbName);
 
