@@ -35,11 +35,16 @@ if(isset($_SESSION["userID"])){
 		echo '</form><hr>';
         //echo "Cartype:".$row['car_type']."Price:".$car_price['price'];
     }
-    echo "<h2>TOTAL PRICE:".$totalAmount. "</h2></div>";
+    echo '<h2>TOTAL PRICE:'.$totalAmount. '</h2><form method="post"><button type="submit" name="purchase_button"> Purchase items </button> </form> </div>';
 }
 else
 {
     echo "Not logged in";
+}
+
+if(isset($_POST['purchase_button'])){
+    
+    purchased($connection);
 }
 
 if(isset($_POST["removeFromBasket"])){
@@ -47,10 +52,31 @@ if(isset($_POST["removeFromBasket"])){
 }
 
 function removeFromBasket($connection){
+    
 	$basketID = $_POST["basketID"];
 	$sql = "DELETE FROM basket WHERE basket.basket_id=$basketID;";
     $result = mysqli_query($connection, $sql);
 	header("location: checkout.php");
 	exit();
+}
+function purchased($connection){
+    $uid = $_SESSION['userID']; 
+    $sql = "SELECT car_type FROM basket WHERE basket.usersID = $uid;";
+    $newTable = mysqli_query($connection,$sql);
+    $removeFromBasketSQL = "DELETE from basket where basket.usersID = $uid;";
+    mysqli_query($connection,$removeFromBasketSQL);
+    while($row = $newTable->fetch_assoc()){
+        $current_car_type = $row['car_type'];
+        $totAmountOfCarsInRowSQL = "SELECT items.car_inv FROM items WHERE items.car_type = '$current_car_type';";
+        $totAmountOfCarsInRow = mysqli_query($connection,$totAmountOfCarsInRowSQL);
+        $getINT = $totAmountOfCarsInRow->fetch_assoc();
+        $reducedAmount = $getINT['car_inv'] - 1;
+        $updateAmountSQL = "UPDATE items SET items.car_inv = $reducedAmount WHERE items.car_type = '$current_car_type';";
+        mysqli_query($connection, $updateAmountSQL);
+    }
+    header("location: checkout.php?sucess");
+	exit();
+    
+    
 }
 ?>
