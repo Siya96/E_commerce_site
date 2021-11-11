@@ -18,6 +18,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="icon" href="favicon.gif" type="image/gif" sizes="15x15">
+  
 
 </head>
 <body><div class="border-center"></div>
@@ -46,13 +47,8 @@
 
 	<ul class="nav navbar-nav">
       <li><a href="index.php" id="menu">Home</a></li>
-      <li class="dropdown"><a class="dropbtn" href="#" id="menu">Sortiment</a>
-          <div class="dropdown-content link">
-          <a href="bugatti.php">Bugatti</a>
-          <a href="ferrari.php">Ferrari</a>
-		  <a href="ford.php">Ford</a>
-      </div></li>
-	  <li><a href="contact.php" id="menu">Contact us</a></li>
+      <li><a href="sortiment.php" id="menu">Sortiment</a></li>
+	    <li><a href="contact.php" id="menu">Contact us</a></li>
       <?php
 
         if (isset($_SESSION["userID"])) {

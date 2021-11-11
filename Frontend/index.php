@@ -1,18 +1,19 @@
 <?php
 
   include_once 'header.php';
-
+  
 ?>
 
 
 <div class="jumbotron">
 
-</div><img src="img/blue_car_01.jpg" alt="A blue sportscar" id="first_pic">
+</div>
 
 
 
 
   <div class="container bleh">
+  
 <div class="row text-center">
       <div class="col-sm-4">
         <div class="thumbnail">
@@ -40,10 +41,10 @@
       </div>
     </div>
   </div>
+</div>
 
-  
 <?php
 
   include_once 'footer.php';
-  
+
 ?>
