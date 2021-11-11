@@ -225,7 +225,7 @@ body{
 
 .jumbotron {
     /* The image used */
-    background-image: url("blue_car_01.jpg");
+    background-image: url("img/blue_car_01.jpg");
 
     /* Set a specific height */
     min-height: 558px; 
@@ -362,6 +362,11 @@ body{
   
   /*END reg_customer */
 
+  /*CHECKOUT*/
+.checkProducts{
+	color: white;
+}
+  /*END CHECKOUT*/
 
   
   /*FOOTER*/

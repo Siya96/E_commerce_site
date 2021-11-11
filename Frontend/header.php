@@ -50,7 +50,6 @@
       <li><a href="sortiment.php" id="menu">Sortiment</a></li>
 	    <li><a href="contact.php" id="menu">Contact us</a></li>
       <?php
-
         if (isset($_SESSION["userID"])) {
 
           echo "<li><a href='includes/logout.inc.php' id='menu'>Log out</a></li>";
