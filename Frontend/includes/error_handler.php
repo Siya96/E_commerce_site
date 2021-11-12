@@ -121,7 +121,9 @@ function userNameExists($connection, $userName, $email) {
 
 function createNewUser($connection, $userName, $email, $pwd) {
 
-    $sql = "INSERT INTO users (usersUID, usersE, usersPWD) VALUES (?, ?, ?);";
+    $sql = "INSERT INTO users (usersUID, usersE, usersPWD, admin) VALUES (?, ?, ?, ?);";
+
+    $adminprivilege = 0;
 
     $sql_stmt = mysqli_stmt_init($connection); 
                                                
@@ -134,7 +136,8 @@ function createNewUser($connection, $userName, $email, $pwd) {
     }
     $pwd_hashed = password_hash($pwd, PASSWORD_DEFAULT);
 
-    mysqli_stmt_bind_param($sql_stmt, "sss", $userName, $email, $pwd_hashed);
+    
+    mysqli_stmt_bind_param($sql_stmt, "sssi", $userName, $email, $pwd_hashed, $adminprivilege);
     
     mysqli_stmt_execute($sql_stmt);
 
