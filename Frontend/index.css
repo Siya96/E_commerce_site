@@ -1,15 +1,15 @@
 ::-moz-selection { /* Code for Firefox */
-    color: white;
+    color: rgb(10, 10, 10);
     background: #edaf10;
 }
 
 ::selection {
-    color: white;
+    color: rgb(17, 13, 13);
     background: #edaf10;
 }
 
 hr{
-	border-color: white !important;
+	border-color: rgb(133, 14, 14);
 }
 
 body{
@@ -52,7 +52,7 @@ body{
      content: "\f290";
 	 font-size: 20px;
 	 padding-right: 5px;
-	 color: white;	 
+	 color: white;
 }
 
 .cart{
@@ -120,17 +120,17 @@ body{
 }
 
 #logo:hover{
-	color: white ; 
+	color: white ;
     background-color: #edaf10;
-    background-size: 80px;	
-	
+    background-size: 80px;
+
 }
 
 #active{
 	color: #edaf10;
 	border-bottom: 2px solid #edaf10;
 	height: 52px;
-    z-index: 1;	
+    z-index: 1;
 }
 
 #menu, .menu {
@@ -138,7 +138,7 @@ body{
 }
 
 #menu:hover, .menu:hover {
-    background-color: #edaf10;	
+    background-color: #edaf10;
 	background-size: 60px;
 }
 
@@ -181,7 +181,7 @@ body{
 #linkcol:after {
     position: absolute; /* Prevent underline of arrow */
     padding-left:3px; /* Add a little space between text and arrow */
-    content: '>'; 
+    content: '>';
 }
 
 #linkcol:hover{
@@ -210,8 +210,8 @@ body{
 	margin-top: 15px;
 }
 
-#shoppingBag:hover{  
-    background-color: white;  
+#shoppingBag:hover{
+    background-color: white;
     color: 	#edaf10;
 }
 
@@ -228,7 +228,7 @@ body{
     background-image: url("img/blue_car_01.jpg");
 
     /* Set a specific height */
-    min-height: 558px; 
+    min-height: 558px;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -237,9 +237,6 @@ body{
     background-size: cover;
 }
 
-#first_pic{
-	display:none;
-}
 
 .thumbnail {
       padding: 0px 0px 15px 0px !important;
@@ -250,7 +247,7 @@ body{
       margin-top: 15px;
       color: black;
   }
-  
+
   .thumbnail img{
 	  width: 100%;
 	  height: 200px !important;
@@ -259,7 +256,7 @@ body{
   .checkout {
 	  margin-left: 29%;
   }
-  
+
   /* End index */
 
 
@@ -271,7 +268,7 @@ body{
 	margin-top: 5%;
 	margin-left: 25%;
 	width: 300px;
-	
+
 }
 
 .leftIn_login h2{
@@ -303,13 +300,13 @@ body{
 }
 
 #vidare_login {
-	
+
 	margin-left: 40%;
 	margin-top: 5%;
 	padding: 2%;
 	color: black;
 	background-color: rgb(153, 153, 153);
-	
+
 }
 
 #vidare_login:hover {
@@ -352,23 +349,64 @@ body{
 	padding: 2%;
 	color: black;
 	background-color: rgb(153, 153, 153);
-	
+
 }
 
 #vidare_reg_customer:hover{
 	background-color: #edaf10;
 
 }
-  
+
   /*END reg_customer */
 
-  /*CHECKOUT*/
-.checkProducts{
+
+/* Begin Sortiment */
+
+
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card-title {
+
+	font-size: 150%;
+	color: white;
+
+
+}
+#adjust {
+
+	width: 280px;
+	height: 240px;
+}
+
+
+.item_container{
+    max-width: 100%;
+    
+
+}
+
+.prodcut-cat {
+
+	font-size: 150%;
 	color: white;
 }
-  /*END CHECKOUT*/
 
-  
+.product-price {
+
+	font-size: 110%;
+	color: rgb(56, 77, 146);
+
+}
+
+
+/* End Sortiment */
+
+
   /*FOOTER*/
 
 .logo_gif{
@@ -383,13 +421,13 @@ body{
 
 
 
-/* ####### responsive layout CSS ---> For mobile layout ####### */ 
+/* ####### responsive layout CSS ---> For mobile layout ####### */
 
-@media (max-width: 576px){ 
+@media (max-width: 576px){
 
 /*MENY*/
 .bannerContainer {
-    position:relative; 
+    position:relative;
 	margin-top: 15%;
 }
 
@@ -435,7 +473,7 @@ body{
 	color: white;
 }
 
-.border-center { 
+.border-center {
     display:none;
 }
 
@@ -488,9 +526,9 @@ body{
 	position:relative;
 }
 
-.jumbotron{
+/* .jumbotron{
     display: none;
-}
+} */
 
 #first_pic{
 	width: 100%;
