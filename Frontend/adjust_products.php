@@ -5,6 +5,7 @@
         $imgUrl = $item['media'];
         $price = $item['price'];
         $carType = $item['car_type'];
+        
 
 
     ?>
@@ -19,21 +20,24 @@
                 
             <div class="name">
 
-                <?php echo $carType ?>
+                <?php echo $carType; ?>
 
             </div>
 
             <p>
 
-                <span class="symbole">$</span><span><strong><?php echo $price ?></strong></span>
+                <span class="symbole">$</span><span><strong><?php echo $price; ?></strong></span>
 
             </p>
 
             <p>
 
                 <form action="includes/sortiment.inc.php" method="post">
-                    <button class="btn btn-primary" name="AddFromCart">Add To Cart</button>
-                    <button class="btn btn-primary" name="RemoveFromCart">Remove From Cart</button>
+                    <button class="btn btn-primary" value="<?php echo $carType;?>" name="AddToCart">Add To Cart</button>
+                    
+                </form>
+                <form action="review.php" method = "post">
+                    <button class ="btn btn-primary" value="<?php echo $carType;?>" name="SeeReviews"> See reviews </button>
                 </form>
 
             </p>
@@ -49,8 +53,9 @@
 
 <?php
 
-    function adjustItemsToRow ($connection, $itemArray) {
 
+    function adjustItemsToRow ($connection, $itemArray) {
+        
     ?>
     <div class="item_container">
 
