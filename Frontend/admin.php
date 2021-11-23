@@ -7,7 +7,6 @@
 
 
 
-
 <section class="changeCar">
     <form action="includes/admin.inc.php" method="post">
         <input type="text" name="carTypeInput">
@@ -75,4 +74,3 @@
     
     
 ?>
-

@@ -14,4 +14,3 @@
        echo "No admin rights";
        exit();
    }
-   

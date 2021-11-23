@@ -204,3 +204,25 @@ function loginUser($connection, $userName, $pwd) {
 
 
 }
+
+
+function fetchAllRows($connection, $table) {
+
+    $sql = "SELECT * FROM  " .  $table . ";";
+
+    $result = mysqli_query($connection, $sql);
+
+
+    $array = array();
+
+    $index = 0;
+    while ($row = mysqli_fetch_assoc($result)) {
+
+        $array[$index] = $row;
+        $index++;
+
+    }
+    
+    return $array;
+
+}
