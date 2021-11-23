@@ -36,6 +36,22 @@
         buttonRemoveItem($connection, $carTypeInput, $carAmountInput);
 
     }
+    if(isset($_POST["addAdmin"])){
+        $uid = $_POST["userID_admin"];
+        $sql_check = "SELECT * FROM users WHERE users.usersID = $uid;";
+        $check_result = mysqli_query($connection, $sql_check);
+        $boolean = $check_result->fetch_assoc();
+        $new_uid = $boolean['usersID'];
+        if($boolean){
+            $sql_insert_admin = "INSERT INTO `admin`(`usersID`) VALUES ($new_uid);";
+            mysqli_query($connection, $sql_insert_admin);
+            header("location: ../admin.php?sucess");
+            exit();
+        }else{
+            header("location: ../admin.php?error=NoUserFound");
+            exit();
+        }
+    }
 
 
 
