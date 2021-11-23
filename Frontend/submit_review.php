@@ -2,7 +2,7 @@
 
   include_once 'header.php';
   
-  $car_type = $_POST["SeeReviews"];
+  $car_type = $_POST["submit"];
     
 ?>
 

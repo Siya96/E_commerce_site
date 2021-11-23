@@ -11,7 +11,7 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="index.css">
+  <link rel="stylesheet" type="text/css" href="index.css?v=<?php echo time();?>">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -54,17 +54,19 @@
 
           echo "<li><a href='includes/logout.inc.php' id='menu'>Log out</a></li>";
           echo "<li><a href='my_profile.php' id='menu'>My profile</a></li>";
+          echo "<li><a href='admin.php' id='menu'>Admin</a></li>";
 
         }
         else {
 
           echo "<li><a href='login.php' id='menu'>Log in</a></li>";
           echo "<li><a href='reg_customer.php' id='menu'>Sign up</a></li>";
+          
 
         }
 
       ?>
-      <li><a href="admin.php" id="menu">Admin</a></li>
+      
     </ul>
 
 

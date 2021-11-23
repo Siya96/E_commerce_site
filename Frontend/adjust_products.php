@@ -20,7 +20,7 @@
                 
             <div class="name">
 
-                <?php echo $carType; ?>
+                <?php echo $item['car_type']; ?>
 
             </div>
 
@@ -30,17 +30,17 @@
 
             </p>
 
-            <p>
+            <div class="buttons">
 
                 <form action="includes/sortiment.inc.php" method="post">
                     <button class="btn btn-primary" value="<?php echo $carType;?>" name="AddToCart">Add To Cart</button>
                     
                 </form>
                 <form action="review.php" method = "post">
-                    <button class ="btn btn-primary" value="<?php echo $carType;?>" name="SeeReviews"> See reviews </button>
+                    <button class ="btn btn-primary" value="<?php echo $carType;?>" name="SeeReviews">See reviews</button>
                 </form>
 
-            </p>
+            </div>
         
         </div>
     

@@ -1,11 +1,9 @@
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+
 require_once 'db_handler.php';
 require_once 'error_handler.php';
-//session_start();
+
 
 if(isset($_SESSION["userID"])){
     $userid = $_SESSION["userID"];

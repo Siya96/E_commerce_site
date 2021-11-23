@@ -1,9 +1,23 @@
 <?php
     include_once 'header.php';
-    
+    require_once 'includes/db_handler.php';
+        
+
+    $uid = $_SESSION["userID"];
+    $sql = "SELECT * FROM admin WHERE admin.usersID = $uid;";
+    $boolean = mysqli_query($connection, $sql);
+    $check = $boolean->fetch_assoc();
+    if($check){
+       
+     
+    }else{
+        echo "No admin rights";
+        header("location: index.php");
+        exit();
+    }
+
 
 ?>
-
 
 
 
@@ -22,19 +36,7 @@
     </form>
 
     <?php
-        require_once 'includes/db_handler.php';
-        
-        $uid = $_SESSION["userID"];
-        $sql = "SELECT * FROM admin WHERE admin.usersID = $uid;";
-        $boolean = mysqli_query($connection, $sql);
-        $check = $boolean->fetch_assoc();
-        if($check){
-         
-        }else{
-            echo "No admin rights";
-            header("location: index.php");
-            exit();
-        }
+
 
         if (isset($_GET["error"])) {
 

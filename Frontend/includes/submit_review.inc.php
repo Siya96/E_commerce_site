@@ -48,6 +48,7 @@ function addReviewToDatabase($connection,$uid, $review_string, $review_int, $car
     mysqli_stmt_close($sql_stmt);
 
     header("location: ../sortiment.php");
+    
     exit();
     
 }
