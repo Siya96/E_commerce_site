@@ -226,3 +226,24 @@ function fetchAllRows($connection, $table) {
     return $array;
 
 }
+
+function fetchAllRowsSpecifiedAttribute($connection, $table, $attribute) {
+
+    $sql = "SELECT * FROM  " .  $table . " WHERE " .  $table . ".userID=$attribute;";
+
+    $result = mysqli_query($connection, $sql);
+
+
+    $array = array();
+
+    $index = 0;
+    while ($row = mysqli_fetch_assoc($result)) {
+
+        $array[$index] = $row;
+        $index++;
+
+    }
+    
+    return $array;
+
+}

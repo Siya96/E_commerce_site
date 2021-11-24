@@ -586,6 +586,27 @@ body{
 
 /*END CONTACT*/
 
+/*BEGIN MY PROFILE*/
+
+.profile{
+	margin-left: 5%;
+}
+.profile h2{
+	color: white;
+}
+
+.profile .comments h3{
+	color:white;
+}
+
+.profile .comments .see_comment{
+	color: white;
+	border-bottom: 1px solid white;
+	margin-bottom: 2%;
+}
+
+/*END MY PROFILE*/
+
   /*FOOTER*/
 
 .logo_gif{
