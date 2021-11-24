@@ -285,7 +285,7 @@ body{
 	margin-top: 20px;
 }
 
-.leftIn_login input:focus, textarea:focus {
+.leftIn_login input:focus, textarea:focus, input:focus {
     outline: none !important;
     border: 2px solid #edaf10;
     box-shadow: 0 0 10px #edaf10;
@@ -558,7 +558,33 @@ body{
 
 /* End Reviews */
 
+/*BEGIN CONTACT*/
 
+.contact{
+	margin-left: 5%;
+}
+
+.contact input{
+	margin-bottom: 1%;
+}
+
+.contact h2{
+	color: white;
+}
+
+#vidare_contact{
+	margin-top: 1%;
+	padding: 1%;
+	color: black;
+	background-color: rgb(153, 153, 153);
+}
+
+#vidare_contact:hover {
+	background-color: #edaf10;
+
+}
+
+/*END CONTACT*/
 
   /*FOOTER*/
 
