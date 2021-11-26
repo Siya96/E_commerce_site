@@ -5,6 +5,7 @@
         $imgUrl = $item['media'];
         $price = $item['price'];
         $carType = $item['car_type'];
+        $carAmount = $item['car_inv'];
         
 
 
@@ -20,7 +21,7 @@
                 
             <div class="name">
 
-                <?php echo $item['car_type']; ?>
+                <?php echo $item['car_type']; ?><br><strong>Cars in stock: <?php echo $carAmount; ?></strong>
 
             </div>
 

@@ -53,6 +53,34 @@
         }
     }
 
+    if(isset($_POST["buttonAddNewItem"])) {
+
+        $carType2 = $_POST["carTypeInput"];
+        $carAmount2 = $_POST["carAmountInput"];
+        $carPrice2 = $_POST["carPriceInput"];
+
+        if($carType2 <= 0 || $carAmount2 < 0) {
+            header("location: ../admin.php?error=invalidPrice");
+            exit();
+
+        }
+
+
+        $sql = "INSERT INTO `items`(`car_type`, `car_inv`, `price`) VALUES ('$carType2', $carAmount2, $carPrice2);";
+
+        $result = mysqli_query($connection, $sql);
+
+        if(!$result) {
+
+            header("location: ../admin.php?error=unknownError");
+            exit();
+
+        }
+        header("location: ../admin.php?error=SuccessfullyAddedNewItem");
+        exit();
+
+    }
+
 
 
 

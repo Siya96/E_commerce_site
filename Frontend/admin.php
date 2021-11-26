@@ -34,6 +34,14 @@
         <button type="submit" name="addAdmin">Add Admin</button>
         
     </form>
+    <form action="includes/admin.inc.php" method="post">
+        <input type="text" name="carTypeInput">
+        <input type="number" name="carAmountInput">
+        <input type="number" name="carPriceInput">
+        <button type="submit" name="buttonAddNewItem">Add new item to sortiment</button>
+        
+    </form>
+
 
     <?php
 

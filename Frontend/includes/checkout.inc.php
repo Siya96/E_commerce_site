@@ -41,7 +41,11 @@ if(isset($_SESSION["userID"])){
 
 if(isset($_POST['purchase_button'])){
     
+	mysqli_query($connection, "START TRANSACTION");
+
     purchased($connection);
+
+
 }
 
 if(isset($_POST["removeFromBasket"])){
@@ -59,18 +63,44 @@ function removeFromBasket($connection){
 function purchased($connection){
     $uid = $_SESSION['userID']; 
     $sql = "SELECT car_type FROM basket WHERE basket.usersID = $uid;";
+
+	
+
     $newTable = mysqli_query($connection,$sql);
+
+	if(!$newTable){
+
+		mysqli_query($connection, "ROLLBACK");
+	}
+
     $removeFromBasketSQL = "DELETE from basket where basket.usersID = $uid;";
-    mysqli_query($connection,$removeFromBasketSQL);
+	
+    $rowRemovedFromBasket = mysqli_query($connection,$removeFromBasketSQL);
+	if(!$rowRemovedFromBasket){
+		mysqli_query($connection, "ROLLBACK");
+	}
+
+
+
     while($row = $newTable->fetch_assoc()){
         $current_car_type = $row['car_type'];
         $totAmountOfCarsInRowSQL = "SELECT items.car_inv FROM items WHERE items.car_type = '$current_car_type';";
+		
         $totAmountOfCarsInRow = mysqli_query($connection,$totAmountOfCarsInRowSQL);
+		if(!$totAmountOfCarsInRow){
+			mysqli_query($connection, "ROLLBACK");
+		}
         $getINT = $totAmountOfCarsInRow->fetch_assoc();
         $reducedAmount = $getINT['car_inv'] - 1;
         $updateAmountSQL = "UPDATE items SET items.car_inv = $reducedAmount WHERE items.car_type = '$current_car_type';";
-        mysqli_query($connection, $updateAmountSQL);
+		
+        $amountUpdated = mysqli_query($connection, $updateAmountSQL);
+		if(!$amountUpdated){
+			mysqli_query($connection, "ROLLBACK");
+		}
     }
+	mysqli_query($connection, "COMMIT");
+
     header("location: checkout.php?sucess");
 	exit();
     

@@ -3,7 +3,7 @@
 
 $serverName = "localhost";
 $dbUsername = "root";
-$dbPassword = "sportscar";
+$dbPassword = "";
 $dbName = "sportscar";
 
 
