@@ -21,6 +21,8 @@ if(isset($_POST["AddToCart"])){
 
     $sql2 = "INSERT INTO `basket`(`basket_id`, `usersID`, `car_type`) VALUES ('',$uid,'$car_type');";
     $testo = mysqli_query($connection, $sql2);
+    header("location: ../sortiment.php");
+    exit();
     
 }
 

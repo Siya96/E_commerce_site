@@ -133,7 +133,7 @@ function getItemAmount($connection, $car_choice) {
 
 }
 
-function fetchAllRows($connection) {
+/*function fetchAllRows($connection) {
 
     $sql = "SELECT * FROM items;";
 
@@ -156,7 +156,7 @@ function fetchAllRows($connection) {
     }
     return $array;
 
-}
+}*/
 
 
 function emptyInput($carType, $carAmount) {
