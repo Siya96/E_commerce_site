@@ -38,12 +38,12 @@
     }
     if(isset($_POST["addAdmin"])){
         $uid = $_POST["userID_admin"];
-        $sql_check = "SELECT * FROM users WHERE users.usersID = $uid;";
+        $sql_check = "SELECT * FROM users WHERE users.usersUID = '$uid';";
         $check_result = mysqli_query($connection, $sql_check);
         $boolean = $check_result->fetch_assoc();
-        $new_uid = $boolean['usersID'];
+        $new_id = $boolean['usersID'];
         if($boolean){
-            $sql_insert_admin = "INSERT INTO `admin`(`usersID`) VALUES ($new_uid);";
+            $sql_insert_admin = "INSERT INTO `admin`(`usersID`) VALUES ($new_id);";
             mysqli_query($connection, $sql_insert_admin);
             header("location: ../admin.php?sucess");
             exit();
@@ -58,6 +58,7 @@
         $carType2 = $_POST["carTypeInput"];
         $carAmount2 = $_POST["carAmountInput"];
         $carPrice2 = $_POST["carPriceInput"];
+        $img = $_POST["img"];
 
         if($carType2 <= 0 || $carAmount2 < 0) {
             header("location: ../admin.php?error=invalidPrice");
@@ -66,7 +67,7 @@
         }
 
 
-        $sql = "INSERT INTO `items`(`car_type`, `car_inv`, `price`) VALUES ('$carType2', $carAmount2, $carPrice2);";
+        $sql = "INSERT INTO `items`(`car_type`, `car_inv`, `price`, `media`) VALUES ('$carType2', $carAmount2, $carPrice2, 'img/$img');";
 
         $result = mysqli_query($connection, $sql);
 

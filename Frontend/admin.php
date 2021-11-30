@@ -23,21 +23,26 @@
 
 <section class="changeCar">
     <form action="includes/admin.inc.php" method="post">
-        <input type="text" name="carTypeInput">
-        <input type="number" name="carAmountInput">
+        <h3>Add/Remove amount</h3>
+        <input type="text" name="carTypeInput" placeholder="Car type">
+        <input type="number" name="carAmountInput" placeholder="Amount">
         <button type="submit" name="buttonAdd">Add</button>
         <button type ="submit" name="buttonRemove">Remove</button>
-    </form>
+    </form><br>
     <section class="changeCar">
     <form action="includes/admin.inc.php" method="post">
-        <input type="number" name="userID_admin">
+        <h3>Add admin</h3>
+        <input type="text" name="userID_admin" placeholder="Username">
         <button type="submit" name="addAdmin">Add Admin</button>
         
-    </form>
+    </form><br>
     <form action="includes/admin.inc.php" method="post">
-        <input type="text" name="carTypeInput">
-        <input type="number" name="carAmountInput">
-        <input type="number" name="carPriceInput">
+        <h3>Add product</h3>
+        <input type="text" name="carTypeInput" placeholder="Car type">
+        <input type="number" name="carAmountInput" placeholder="Amount">
+        <input type="number" name="carPriceInput" placeholder="Price"><br>
+        <label for="img">Select image:</label>
+        <input type="file" id="img" name="img" accept="image/*">
         <button type="submit" name="buttonAddNewItem">Add new item to sortiment</button>
         
     </form>

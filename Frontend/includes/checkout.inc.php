@@ -61,6 +61,8 @@ function removeFromBasket($connection){
 	exit();
 }
 function purchased($connection){
+	$savePointSQL = "SAVEPOINT restart;";
+	mysqli_query($connection, $savePointSQL);
     $uid = $_SESSION['userID']; 
     $sql = "SELECT car_type FROM basket WHERE basket.usersID = $uid;";
 
@@ -81,16 +83,21 @@ function purchased($connection){
 	}
 
 
-
+	$restartSQL = "ROLLBACK TO restart;";
+	$car_type_error = 0;
     while($row = $newTable->fetch_assoc()){
+		
         $current_car_type = $row['car_type'];
-        $totAmountOfCarsInRowSQL = "SELECT items.car_inv FROM items WHERE items.car_type = '$current_car_type';";
+        $totAmountOfCarsInRowSQL = "SELECT items.car_inv, price FROM items WHERE items.car_type = '$current_car_type';";
 		
         $totAmountOfCarsInRow = mysqli_query($connection,$totAmountOfCarsInRowSQL);
 		if(!$totAmountOfCarsInRow){
 			mysqli_query($connection, "ROLLBACK");
 		}
         $getINT = $totAmountOfCarsInRow->fetch_assoc();
+		if($getINT['car_inv'] - 1 < 0){
+			$car_type_error = -1;
+		}
         $reducedAmount = $getINT['car_inv'] - 1;
         $updateAmountSQL = "UPDATE items SET items.car_inv = $reducedAmount WHERE items.car_type = '$current_car_type';";
 		
@@ -98,7 +105,20 @@ function purchased($connection){
 		if(!$amountUpdated){
 			mysqli_query($connection, "ROLLBACK");
 		}
+
+		$price_current_car_type = $getINT['price'];
+		$addToOrderHistorySQL = "INSERT INTO `orderhistory`(`userID`, `car_type`, `price`) VALUES ($uid,'$current_car_type',$price_current_car_type);";
+		$addToOrderHistory = mysqli_query($connection, $addToOrderHistorySQL);
+		if(!$addToOrderHistory){
+			mysqli_query($connection, "ROLLBACK");
+		}
     }
+	if($car_type_error == -1){
+		mysqli_query($connection, "ROLLBACK");
+		header("location: checkout.php?NoStock");
+		exit();
+	}
+
 	mysqli_query($connection, "COMMIT");
 
     header("location: checkout.php?sucess");

@@ -71,19 +71,13 @@
 
 
     <ul class="nav navbar-nav navbar-right">
-      <li class="dropdown"><a class="dropbtn cart2" href="shoppingBag.html" id="menu"></a>
-          <div class="dropdown-content cartDown">
-          <div class="tom"><p>You have no current order!</p></div>
-          <div class="result">
-		  <p><b>Total cost:<b id="p3">0.0kr</b></b></p>
+      <a class="dropbtn cart2" href="checkout.php" id="menu"></a>
+        
 
-      <form action="checkout.php">
-      <button type="checkout" class="checkout">To chechkout
-      </button>
-      </form>
+     
 
-		  </div>
-      </div></li>
+		 
+      
     </ul>
   </div></div>
 </nav></div>
