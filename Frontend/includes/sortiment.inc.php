@@ -6,7 +6,12 @@ require_once 'error_handler.php';
 //session_start();
 
 if(isset($_POST["AddToCart"])){
+
+    mysqli_query($connection, "START TRANSACTION;");
+
     session_start();
+
+    
     $car_type = $_POST["AddToCart"];
     $sql = "SELECT car_inv FROM items WHERE items.car_type = '$car_type';";
     $amount = mysqli_query($connection, $sql); //mysqli_query only returns an mysqli object which with following line below is then extracted into a associative array
@@ -17,12 +22,21 @@ if(isset($_POST["AddToCart"])){
         exit();
     }
     else {
-    echo $car_type;
+    
     $uid = $_SESSION['userID']; 
 
-
+    
     $sql2 = "INSERT INTO basket(basket_id, usersID, car_type) VALUES ('',$uid,'$car_type');";
+    
     $testo = mysqli_query($connection, $sql2);
+    
+     if(!$amount or !$testo){
+         
+         mysqli_query($connection, "ROLLBACK;");
+         header("location: ../sortiment.php?rollback");
+         exit();
+    }
+    mysqli_query($connection, "COMMIT;");
     header("location: ../sortiment.php");
     exit();
 

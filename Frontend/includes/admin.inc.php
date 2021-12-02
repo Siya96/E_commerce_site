@@ -60,8 +60,8 @@
         $carPrice2 = $_POST["carPriceInput"];
         $img = $_POST["img"];
 
-        if($carType2 <= 0 || $carAmount2 < 0) {
-            header("location: ../admin.php?error=invalidPrice");
+        if($carPrice2 <= 0 || $carAmount2 < 0) {
+            header("location: ../admin.php?error=negativeInput");
             exit();
 
         }
@@ -82,6 +82,43 @@
 
     }
 
+    if(isset($_POST["removeCar"])) {
+
+        
+
+        mysqli_query($connection, "START TRANSACTION;");
+
+        $carType3 = $_POST["remove_car_type"];
+        checkTypeExist($connection, $carType3);
+
+        
+
+
+        $sql = "DELETE FROM basket WHERE car_type = '$carType3';";
+        $result = mysqli_query($connection, $sql);
+
+        if(!$result) {
+            header("location: ../admin.php?error=unableToDeleteFromBasket");
+            exit();
+
+        }
+
+        $sql2 = "DELETE FROM items WHERE car_type = '$carType3';";
+        $result2 = mysqli_query($connection, $sql2);
+        if(!$result2) {
+            mysqli_query($connection, "ROLLBACK;");
+            header("location: ../admin.php?error=unknownErrorRemoveItem");
+            exit();
+
+        }
+        mysqli_query($connection, "COMMIT;");
+        header("location: ../admin.php?error=SuccessfullyRemovedNewItem");
+        exit();
+
+    }
+
+    
+
 
 
 
@@ -89,17 +126,33 @@
 
 function buttonAddItem($connection, $car_type_input, $car_amount_input) {
 
+    if($car_amount_input <= 0) {
+
+        header("location: ../admin.php?error=invlaidAmountInput");
+        exit();
+
+    }
 
     $foundAmount = getItemAmount($connection, $car_type_input);
 
     $totalCarAmount = ($foundAmount + $car_amount_input);
 
+
+    checkTypeExist($connection, $car_type_input);
+
+
     $sql2 = "UPDATE items SET car_inv=$totalCarAmount WHERE car_type = '$car_type_input';";
 
     mysqli_query($connection, $sql2);
 
+
     header("location: ../admin.php?error=SuccessfullyUpdated_add");
     exit();
+    
+
+    
+
+
 
 }
 
@@ -107,6 +160,13 @@ function buttonAddItem($connection, $car_type_input, $car_amount_input) {
 
 function buttonRemoveItem($connection, $car_type_input, $car_amount_input) {
 
+
+    checkTypeExist($connection, $car_type_input);
+
+    if($car_amount_input <= 0){
+        header("location: ../admin.php?invalidamount");
+        exit();
+    }
 
     $foundAmount = getItemAmount($connection, $car_type_input);
 
@@ -204,5 +264,21 @@ function emptyInput($carType, $carAmount) {
     }
 
     return $result;
+
+}
+
+function checkTypeExist($connection, $car_type_input) {
+
+    $checkItem = "SELECT * FROM items WHERE car_type = '$car_type_input';";
+
+    $checkItem_result = mysqli_query($connection, $checkItem);
+
+    if($checkItem_result->num_rows == 0) {
+
+        header("location: ../admin.php?error=invalidItem");
+        exit();
+
+    }
+
 
 }

@@ -45,7 +45,14 @@
         <input type="file" id="img" name="img" accept="image/*">
         <button type="submit" name="buttonAddNewItem">Add new item to sortiment</button>
         
-    </form>
+    </form><br>
+
+    <form action="includes/admin.inc.php" method="post">
+        <h3>Remove item</h3>
+        <input type="text" name="remove_car_type" placeholder="Item to be removed">
+        <button type="submit" name="removeCar">Remove item</button>
+        
+    </form><br>
 
 
     <?php

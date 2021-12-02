@@ -25,7 +25,7 @@ if(isset($_SESSION["userID"])){
 			$car_price = $price->fetch_assoc();
 			$totalAmount = $totalAmount + $car_price["price"];
 			echo '<h2>Product: '.$row["car_type"].'</h2>';
-			echo '<h2>Price: '.$car_price["price"].'</h2>';
+			echo '<h2>Price: $'.$car_price["price"].'</h2>';
 			echo '<form method="post">'; //NO action = submits to same page
 			echo '<input type="hidden" value="'.$row["basket_id"].'" name="basketID">';
 			echo '<button type="submit" name="removeFromBasket">Remove from basket</button>';
@@ -33,7 +33,7 @@ if(isset($_SESSION["userID"])){
 			//echo "Cartype:".$row['car_type']."Price:".$car_price['price'];
 		}
 		
-		echo '<h2>TOTAL PRICE:'.$totalAmount. '</h2><form method="post"><button type="submit" name="purchase_button"> Purchase items </button> </form> </div>';
+		echo '<h2>TOTAL PRICE:$'.$totalAmount. '</h2><form method="post"><button type="submit" name="purchase_button"> Purchase items </button> </form> </div>';
 	}
 }else{
     echo "Not logged in";
@@ -61,8 +61,7 @@ function removeFromBasket($connection){
 	exit();
 }
 function purchased($connection){
-	$savePointSQL = "SAVEPOINT restart;";
-	mysqli_query($connection, $savePointSQL);
+	
     $uid = $_SESSION['userID']; 
     $sql = "SELECT car_type FROM basket WHERE basket.usersID = $uid;";
 
@@ -83,7 +82,7 @@ function purchased($connection){
 	}
 
 
-	$restartSQL = "ROLLBACK TO restart;";
+	
 	$car_type_error = 0;
     while($row = $newTable->fetch_assoc()){
 		
