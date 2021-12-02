@@ -26,7 +26,7 @@ if(isset($_POST["AddToCart"])){
     $uid = $_SESSION['userID']; 
 
     
-    $sql2 = "INSERT INTO basket(basket_id, usersID, car_type) VALUES ('',$uid,'$car_type');";
+    $sql2 = "INSERT INTO basket(usersID, car_type) VALUES ($uid,'$car_type');";
     
     $testo = mysqli_query($connection, $sql2);
     
